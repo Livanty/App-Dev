@@ -1,0 +1,12 @@
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\bin\Debug\THA_W3_Livanty_ED_W3.exe.config
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\bin\Debug\THA_W3_Livanty_ED_W3.exe
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\bin\Debug\THA_W3_Livanty_ED_W3.pdb
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\obj\Debug\THA_W3_Livanty_ED_W3.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\obj\Debug\THA_W3_Livanty_ED_W3.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\obj\Debug\THA_W3_Livanty_ED_W3.MainWindowForm.resources
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\obj\Debug\THA_W3_Livanty_ED_W3.Properties.Resources.resources
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\obj\Debug\THA_W3_Livanty_ED_W3.SecondWindowForm.resources
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\obj\Debug\THA_W3_Livanty_ED_W3.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\obj\Debug\THA_W3_Livanty_ED_W3.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\obj\Debug\THA_W3_Livanty_ED_W3.exe
+C:\Users\HP\source\repos\THA_W3_Livanty_ED_W3\THA_W3_Livanty_ED_W3\obj\Debug\THA_W3_Livanty_ED_W3.pdb
