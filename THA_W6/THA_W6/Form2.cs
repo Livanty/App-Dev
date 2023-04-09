@@ -103,7 +103,7 @@ namespace THA_W6
 
             
             string guessesword = kata[new Random().Next(0, kata.Length)];
-            MessageBox.Show(guessesword);
+            MessageBox.Show(guessesword + " Ini Jawaban biar memudahkan :v");
             save = guessesword;
 
             for (int i = 0; i < guessesword.Length; i++)
@@ -163,48 +163,59 @@ namespace THA_W6
         string cek;
         bool piu = true;
         string ya = "";
-        string poin = "";
-        string poinbutton = "";
+
+
         
-       
         private void buttonenter_Click(object sender, EventArgs e)
         {
-            int pap = 0;
-            int yay = 0;
-            for (int i = 0; i < daftarkata.Count; i++)
+            bool yah = true;
+            //int pap = 0;
+            //int yay = 0;
+            //string poin = "";
+            //string poinbutton = "";
+            //for (int i = 0; i < daftarkata.Count; i++)
+            //{
+            //    for (int j = i + 1; j < daftarkata.Count; j++)
+            //    {
+            //        if (daftarkata[i] == daftarkata[j])
+            //        {
+            //            // piu = false;
+            //            poin = daftarkata[i].ToUpper();
+
+            //        }
+
+            //    }
+
+            //}
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    int hitung = 0;
+            //    for (int j = i + 1; j < 5; j++)
+            //    {
+
+            //        if (buttonarray[tebak, i].Text == buttonarray[tebak, j].Text)
+            //        {
+            //            hitung++;
+            //            poinbutton = buttonarray[tebak, i].Text;
+
+
+            //        }
+            //        if (hitung > 2 && !yangsama.Contains(Convert.ToChar(buttonarray[tebak, i].Text)))
+            //        {
+
+            //            yangsama.Add(Convert.ToChar(buttonarray[tebak, i].Text));
+            //        }
+
+            //    }
+            //}
+
+            for (int j = 0; j < 5; j++)
             {
-                for (int j = i + 1; j < daftarkata.Count; j++)
+                if (buttonarray[tebak,j].Text == "")
                 {
-                    if (daftarkata[i] == daftarkata[j])
-                    {
-                        // piu = false;
-                        poin = daftarkata[i].ToUpper();
-                    }
-
-                }
-
-            }
-            for (int i = 0; i < 5; i++)
-            {
-                int hitung = 0;
-                for (int j = i + 1; j < 5; j++)
-                {
-
-                    if (buttonarray[tebak, i].Text == buttonarray[tebak, j].Text)
-                    {
-                        hitung++;
-                        poinbutton = buttonarray[tebak, i].Text;
-                        MessageBox.Show(buttonarray[tebak, i].Text);
-                    }
-                    if (hitung > 2 && !yangsama.Contains(Convert.ToChar(buttonarray[tebak, i].Text)))
-                    {
-                        
-                        yangsama.Add(Convert.ToChar(buttonarray[tebak, i].Text));
-                    }
+                    yah = false;
                 }
             }
-
-
             bool jalan = true;
             for (int j = 0; j < 5; j++)
             {
@@ -224,67 +235,82 @@ namespace THA_W6
                 }
 
             }
-
+            
             if (jalan == false)
             {
                 MessageBox.Show(cek + " Kata tidak ada dalam Word List");
 
             }
-            else if (jalan == true)
+            if (yah == false)
+            {
+                MessageBox.Show(" Harap semua kotak diisi");
+            }
+            else if (jalan == true && yah ==true )
             {
 
-                foreach (var a in daftarkata)
-                {
+                //foreach (var a in daftarkata)
+                //{
                     
-                    for (int j = 0; j < 5; j++)
-                    {
+                //    for (int j = 0; j < 5; j++)
+                //    {
 
-                        if (a.ToUpper() == buttonarray[tebak, j].Text)
-                        {
-
-                            buttonarray[tebak, j].BackColor = Color.Yellow;
-                            yay += 1;
-                        }
-                        if (yay > 1 && !yangsama.Contains(Convert.ToChar(a)))
-                        {
-                            
-                            buttonarray[tebak, j].BackColor = Color.White;
-
-                        }
-                       
-                    }
-                    yay = 0;
-                }
+                //        if (a.ToUpper() == buttonarray[tebak, j].Text)
+                //        {
+                //            buttonarray[tebak, j].BackColor = Color.Yellow;
+                //            yay += 1;
+                //        }
+                //        if (yay > 1 && !yangsama.Contains(Convert.ToChar(a)))
+                //        {                            
+                //            buttonarray[tebak, j].BackColor = Color.White;
+                //        }
+                        
+                //        if (a.ToUpper() == buttonarray[tebak, j].Text)
+                //        {
+                //            if (poin == poinbutton)
+                //            {
+                //                MessageBox.Show("piu");
+                //                buttonarray[tebak, j].BackColor = Color.Pink;
+                //            }
+                //        }
+                //        yay = 0;
+                //    }
+                    
+                //}
 
                 for (int j = 0; j < 5; j++)
                 {
                     foreach (var a in daftarkata)
                     {
-
+                        
                         if (daftarkata[j].ToString().ToUpper() == buttonarray[tebak, j].Text)
                         {
                             buttonarray[tebak, j].BackColor = Color.GreenYellow;
 
                         }
-                       
-                    }
-                }
-
-                for (int j = 0; j < 5; j++)
-                {
-                    if (buttonarray[tebak, j].BackColor == Color.GreenYellow && !yangsama.Contains(Convert.ToChar(buttonarray[tebak, j].Text)))
-                    {
-                        string text = buttonarray[tebak, j].Text;
-                        for (int k = 0; k < 5; k++)
+                        else if (a.ToUpper() == buttonarray[tebak, j].Text)
                         {
-                            if (buttonarray[tebak, k].BackColor == Color.Yellow && buttonarray[tebak, k].Text == text)
-                            {
-                                buttonarray[tebak, k].BackColor = Color.White;
-                            }
-                        }
-                    }
+                            buttonarray[tebak, j].BackColor = Color.Yellow;
 
+                        }
+
+                    }
                 }
+
+                //for (int j = 0; j < 5; j++)
+                //{
+                //    if (buttonarray[tebak, j].BackColor == Color.GreenYellow && !yangsama.Contains(Convert.ToChar(buttonarray[tebak, j].Text)))
+                //    {
+                //        string text = buttonarray[tebak, j].Text;
+                //        for (int k = 0; k < 5; k++)
+                //        {
+                //            if (buttonarray[tebak, k].BackColor == Color.Yellow && buttonarray[tebak, k].Text == text)
+                //            {
+                //                buttonarray[tebak, k].BackColor = Color.White;
+                //            }
+                //        }
+                //    }
+
+                //}
 
                 if (buttonarray[tebak, 0].BackColor == Color.GreenYellow && buttonarray[tebak, 1].BackColor == Color.GreenYellow && buttonarray[tebak, 2].BackColor == Color.GreenYellow && buttonarray[tebak, 3].BackColor == Color.GreenYellow && buttonarray[tebak, 4].BackColor == Color.GreenYellow)
                 {
