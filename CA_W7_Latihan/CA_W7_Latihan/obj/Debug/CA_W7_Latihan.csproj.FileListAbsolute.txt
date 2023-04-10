@@ -1,0 +1,13 @@
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\bin\Debug\CA_W7_Latihan.exe.config
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\bin\Debug\CA_W7_Latihan.exe
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\bin\Debug\CA_W7_Latihan.pdb
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\obj\Debug\CA_W7_Latihan.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\obj\Debug\CA_W7_Latihan.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\obj\Debug\CA_W7_Latihan.Form1.resources
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\obj\Debug\CA_W7_Latihan.form_food.resources
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\obj\Debug\CA_W7_Latihan.Properties.Resources.resources
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\obj\Debug\CA_W7_Latihan.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\obj\Debug\CA_W7_Latihan.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\obj\Debug\CA_W7_Latihan.exe
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\obj\Debug\CA_W7_Latihan.pdb
+C:\Users\HP\source\repos\CA_W7_Latihan\CA_W7_Latihan\obj\Debug\CA_W7_Latihan.form_snack.resources
