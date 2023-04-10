@@ -1,0 +1,13 @@
+C:\Users\HP\source\repos\CA_W7\CA_W7\bin\Debug\CA_W7.exe.config
+C:\Users\HP\source\repos\CA_W7\CA_W7\bin\Debug\CA_W7.exe
+C:\Users\HP\source\repos\CA_W7\CA_W7\bin\Debug\CA_W7.pdb
+C:\Users\HP\source\repos\CA_W7\CA_W7\obj\Debug\CA_W7.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\CA_W7\CA_W7\obj\Debug\CA_W7.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\source\repos\CA_W7\CA_W7\obj\Debug\CA_W7.Form1.resources
+C:\Users\HP\source\repos\CA_W7\CA_W7\obj\Debug\CA_W7.Properties.Resources.resources
+C:\Users\HP\source\repos\CA_W7\CA_W7\obj\Debug\CA_W7.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\CA_W7\CA_W7\obj\Debug\CA_W7.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\CA_W7\CA_W7\obj\Debug\CA_W7.exe
+C:\Users\HP\source\repos\CA_W7\CA_W7\obj\Debug\CA_W7.pdb
+C:\Users\HP\source\repos\CA_W7\CA_W7\obj\Debug\CA_W7.Form_child.resources
+C:\Users\HP\source\repos\CA_W7\CA_W7\obj\Debug\CA_W7.Form_childkanan.resources
