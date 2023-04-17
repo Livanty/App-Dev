@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp1
 {
@@ -16,126 +19,103 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
-        private void tShirtToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            ftshirt tshirt = new ftshirt(this);
-            // f_child.MdiParent = this;
-            tshirt.Dock = DockStyle.Fill;
-            tshirt.TopLevel = false;
-            panel1.Controls.Clear();
-            this.panel1.Controls.Add(tshirt);
-            tshirt.Show();
-        }
-
-        private void shirtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            shirt shirt = new shirt(this);
-            // f_child.MdiParent = this;
-            shirt.Dock = DockStyle.Fill;
-            shirt.TopLevel = false;
-            panel1.Controls.Clear();
-            this.panel1.Controls.Add(shirt);
-            shirt.Show();
-        }
-
-        internal DataTable dtnota = new DataTable();
-
+        MySqlConnection sqlConnect;
+        MySqlCommand sqlCommand;
+        MySqlDataAdapter sqlAdapter;
+        string connectionString;
+        string sqlQuery;
+        DataTable dtPemain = new DataTable();
+        DataTable dtsource1 = new DataTable();
+        DataTable dtsource2 = new DataTable();
+        DataTable dtsource3 = new DataTable();
         private void Form1_Load(object sender, EventArgs e)
         {
-            dtnota.Columns.Add("Item");
-            dtnota.Columns.Add("Qty");
-            dtnota.Columns.Add("Price");
-            dtnota.Columns.Add("Total");
- 
-            dgv.DataSource = dtnota;
-        }
-        
-        public void updateData(string nama, int qty, int price)
-        {
-            bool cek = true;
-            int subtotal = 0;
-            int totall = 0;
-            foreach (DataRow i in dtnota.Rows )
-            {
-                if (nama == i[0].ToString())
-                {
-                    cek = false;
-                    i[1] = Convert.ToInt32(i[1]) + 1;
-                    i[3] = Convert.ToInt32(i[1]) * Convert.ToInt32(i[2]);
-                    break;
-                }                                  
-                
-            }
-            if (cek == true)
-            {
-                dtnota.Rows.Add(nama, qty, price, price * qty);
-            }
+           
+            connectionString = "server=localhost;uid=root;pwd=;database=premier_league";
+            sqlConnect = new MySqlConnection(connectionString);
 
-
-            foreach (DataRow i in dtnota.Rows)
-            {
-                subtotal += Convert.ToInt32(i[3]);
-                label3.Text = subtotal.ToString();
-
-            }
-            totall = subtotal * 10 / 100 + subtotal;
-            label4.Text= totall.ToString();
+            sqlQuery = "SELECT team_name, team_id FROM team;";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtPemain);
+            cmb1.DisplayMember = "team_name";
+            cmb1.ValueMember = "team_id";
+            cmb1.DataSource = dtPemain;
 
         }
 
-        private void pantsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void teamDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            celana1 shirt = new celana1(this);
-            // f_child.MdiParent = this;
-            shirt.Dock = DockStyle.Fill;
-            shirt.TopLevel = false;
-            panel1.Controls.Clear();
-            this.panel1.Controls.Add(shirt);
-            shirt.Show();
+            dtsource1.Clear();
+            dtsource2.Clear();
+            dgv2.Visible = true;
+            dgv1.Visible = true;
+            dgv3.Visible = false;
+            cmb1.Visible = true;
+
+            //string simpan = cmb1.SelectedValue.ToString();
+            //sqlQuery = $"SELECT player_name, team_name, playing_pos, weight, height FROM player INNER JOIN team ON player.team_id = team.team_id WHERE team_name = '{cmb1.SelectedText}';";
+            //sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            //sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            //sqlAdapter.Fill(dtsource1);
+            //dgv1.DataSource = dtsource1;
+
+            //sqlQuery = $"select team_name, manager_name, birthdate, nation FROM manager INNER JOIN team ON manager.manager_id = team.manager_id INNER JOIN nationality ON manager.nationality_id = nationality.nationality_id WHERE team_name='{simpan}';";
+            //sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            //sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            //sqlAdapter.Fill(dtsource2);
+            //dgv2.DataSource = dtsource2;
         }
 
-        private void skirtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cmb1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            f_skirt shirt = new f_skirt(this);
-            // f_child.MdiParent = this;
-            shirt.Dock = DockStyle.Fill;
-            shirt.TopLevel = false;
-            panel1.Controls.Clear();
-            this.panel1.Controls.Add(shirt);
-            shirt.Show();
+
+            //MessageBox.Show(cmb1.SelectedValue.ToString());
+            //dtsource1.Clear();
+
+            string simpan = cmb1.SelectedValue.ToString();
+            dtsource1.Clear();
+            dtsource2.Clear();
+            dtsource3.Clear();
+            sqlQuery = $"SELECT player_name, team_name, playing_pos, weight, height FROM player INNER JOIN team ON player.team_id = team.team_id WHERE team_name = '{cmb1.SelectedText}';";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtsource1);
+            dgv1.DataSource = dtsource1;
+
+            sqlQuery = $"select team_name, manager_name, birthdate, nation FROM manager INNER JOIN team ON manager.manager_id = team.manager_id INNER JOIN nationality ON manager.nationality_id = nationality.nationality_id WHERE team_id='{simpan}';";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtsource2);
+            dgv2.DataSource = dtsource2;
+
+            string simpan1 = cmb1.SelectedValue.ToString();
+            sqlQuery = $"select team_home, team_away, match_date, goal_home, goal_away, referee_name FROM `match` INNER JOIN team on `match`.team_home = team.team_id or `match`.team_away = team.team_id INNER JOIN referee on `match`.referee_id = referee.referee_id WHERE team_home='{simpan1}';";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtsource3);
+            dgv3.DataSource = dtsource3;
+
+            //dtsource2.Clear();
+
         }
 
-        private void jewelleriesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void findMatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            perhiasan shirt = new perhiasan(this);
-            // f_child.MdiParent = this;
-            shirt.Dock = DockStyle.Fill;
-            shirt.TopLevel = false;
-            panel1.Controls.Clear();
-            this.panel1.Controls.Add(shirt);
-            shirt.Show();
-        }
-
-        private void shoesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            shoes shirt = new shoes(this);
-            // f_child.MdiParent = this;
-            shirt.Dock = DockStyle.Fill;
-            shirt.TopLevel = false;
-            panel1.Controls.Clear();
-            this.panel1.Controls.Add(shirt);
-            shirt.Show();
-        }
-
-        private void dgv_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgv.CurrentCell.ToString() == "0")
-            {
-                MessageBox.Show("piu");
-                dtnota.Rows.RemoveAt(dgv.CurrentCell.RowIndex);
-            }
-
+            dtsource1.Clear();
+            dtsource2.Clear();
+            dtsource3.Clear();
+            dgv2.Visible = false;
+           
+            dgv1.Visible = false;
+            dgv3.Visible = true;
+            string simpan1 = cmb1.SelectedValue.ToString();
+            sqlQuery = $"select team_home, team_away, match_date, goal_home, goal_away, referee_name FROM `match` INNER JOIN team on `match`.team_home = team.team_id or `match`.team_away = team.team_id INNER JOIN referee on `match`.referee_id = referee.referee_id WHERE team_home='{simpan1}';";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtsource3);
+            dgv3.DataSource = dtsource3;
         }
     }
 }
