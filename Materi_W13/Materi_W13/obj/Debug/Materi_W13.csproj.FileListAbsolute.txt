@@ -1,0 +1,11 @@
+C:\Users\student\source\repos\Materi_W13\Materi_W13\bin\Debug\Materi_W13.exe.config
+C:\Users\student\source\repos\Materi_W13\Materi_W13\bin\Debug\Materi_W13.exe
+C:\Users\student\source\repos\Materi_W13\Materi_W13\bin\Debug\Materi_W13.pdb
+C:\Users\student\source\repos\Materi_W13\Materi_W13\obj\Debug\Materi_W13.csproj.AssemblyReference.cache
+C:\Users\student\source\repos\Materi_W13\Materi_W13\obj\Debug\Materi_W13.csproj.SuggestedBindingRedirects.cache
+C:\Users\student\source\repos\Materi_W13\Materi_W13\obj\Debug\Materi_W13.Form1.resources
+C:\Users\student\source\repos\Materi_W13\Materi_W13\obj\Debug\Materi_W13.Properties.Resources.resources
+C:\Users\student\source\repos\Materi_W13\Materi_W13\obj\Debug\Materi_W13.csproj.GenerateResource.cache
+C:\Users\student\source\repos\Materi_W13\Materi_W13\obj\Debug\Materi_W13.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\Materi_W13\Materi_W13\obj\Debug\Materi_W13.exe
+C:\Users\student\source\repos\Materi_W13\Materi_W13\obj\Debug\Materi_W13.pdb
