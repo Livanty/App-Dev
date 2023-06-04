@@ -20,8 +20,8 @@ namespace THA_W7_Livanty
             InitializeComponent();
             this.form1 = form1;
         }
-        string[] judulfilm = File.ReadAllText("C:\\Users\\HP\\Downloads\\NamaFilm.txt").Split(',');
-        string[] poster = { "C:\\Users\\HP\\source\\repos\\THA_W7_Livanty\\THA_W7_Livanty\\avatar.jpg", "C:\\Users\\HP\\source\\repos\\THA_W7_Livanty\\THA_W7_Livanty\\aquaman.jpg", "C:\\Users\\HP\\source\\repos\\THA_W7_Livanty\\THA_W7_Livanty\\bighero.jpg", "C:\\Users\\HP\\source\\repos\\THA_W7_Livanty\\THA_W7_Livanty\\endgame.jpg", "C:\\Users\\HP\\source\\repos\\THA_W7_Livanty\\THA_W7_Livanty\\infinitywar.jpeg", "C:\\Users\\HP\\source\\repos\\THA_W7_Livanty\\THA_W7_Livanty\\jumanji.jpg","C:\\Users\\HP\\source\\repos\\THA_W7_Livanty\\THA_W7_Livanty\\mariposa.jpg", "C:\\Users\\HP\\source\\repos\\THA_W7_Livanty\\THA_W7_Livanty\\minions.jpeg" };
+        string[] judulfilm = File.ReadAllText(@"..\\..\\NamaFilm.txt").Split(',');
+        string[] poster = { @"..\\..\\avatar.jpg", @"..\\..\\aquaman.jpg", @"..\\..\\bighero.jpg", @"..\\..\\endgame.jpg", @"..\\..\\infinitywar.jpeg", @"..\\..\\jumanji.jpg",@"..\\..\\mariposa.jpg", @"..\\..\\minions.jpeg" };
         Label[] labelfilm;
        // Button[] buttonfilm;
         PictureBox[] pbfilm;
